@@ -1,5 +1,5 @@
 
-node('docker-base') {
+node() {
 
     try {
     
