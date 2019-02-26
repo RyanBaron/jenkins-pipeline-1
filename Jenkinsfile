@@ -1,32 +1,15 @@
-pipeline {
 
-    agent any
+node('docker-base') {
 
-    stages {
-        stage('Build') {
-            steps {
-                sh '''
-                   echo build
-                   '''
+    try {
+    
+        docker.image('jenkins/docker').inside("-u root") {
+            stage("Build") {
+                sh 'echo build test inside docker.image'
             }
+        
         }
 
-        stage('Test') {
-            steps {
-                sh 'echo test'
-            }
-        }
-
-        stage('Push') {
-            steps {
-                sh 'echo push'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                sh 'echo deploy'
-            }
-        }
     }
+    
 }
