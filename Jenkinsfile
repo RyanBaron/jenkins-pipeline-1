@@ -11,5 +11,10 @@ node('docker-base') {
         }
 
     }
+    catch (err) {
+
+        throw err
+
+    }
     
 }
