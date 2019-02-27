@@ -1,7 +1,6 @@
 pipeline {
-    agent {
-        docker { image 'ataylorme/docker-php-advanced-wordpress-on-pantheon' }
-    }
+    agent { dockerfile true }
+    
     stages {
         stage('Build') {
             steps {
