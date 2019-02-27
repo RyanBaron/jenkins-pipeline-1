@@ -3,9 +3,9 @@ pipeline {
         docker { image 'ataylorme/docker-php-advanced-wordpress-on-pantheon' }
     }
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
-                sh 'node --version'
+                sh 'echo here in the build step...'
             }
         }
     }
