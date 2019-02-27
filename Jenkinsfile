@@ -1,23 +1,12 @@
-
-node() {
-
-    try {
-    
-        docker.image('ataylorme/docker-php-advanced-wordpress-on-pantheon').inside("-u root") {
-            stage("Build") {
-                sh 'echo build test inside docker.image'
-                sh 'pwd'
-                sh 'ls -l -a'
-                sh 'whoami'
+pipeline {
+    agent {
+        docker { image 'ataylorme/docker-php-advanced-wordpress-on-pantheon' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
             }
-        
         }
-
     }
-    catch (err) {
-
-        throw err
-
-    }
-    
 }
