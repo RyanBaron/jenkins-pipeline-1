@@ -7,6 +7,10 @@ node('docker-base-agent-1') {
 	    // git branch: "${env.BRANCH_NAME}", url: "git@github.corp.qc:qc/WEBSITE-marketing_2017.git", credentialsId: "qools_robot"
 	    //sh "cp -v $WP_SETTINGS .ebextensions/secrets_env_test.tpl"
         sh "echo Building..."
+	sh "pwd"
+	sh "whoami"
+	sh "echo 'testtest' >> testtext.txt"
+    	sh "ls -l -a"
     }
   }
   catch (err) {
