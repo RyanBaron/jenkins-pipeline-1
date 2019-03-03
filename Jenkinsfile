@@ -9,4 +9,8 @@ node('docker-base-agent-1') {
         sh "echo Building..."
     }
   }
+  catch (err) {
+    currentBuild.result = 'FAILED'
+    throw err
+  }
 }
